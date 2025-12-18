@@ -9,3 +9,29 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* Custom CSS for Mac-style toasts */
+#toast-container {
+    pointer-events: none; /* Allow clicks to pass through to elements below */
+}
+
+#toast-container > div {
+    pointer-events: auto; /* Re-enable pointer events for the toasts themselves */
+    /* Custom backdrop-filter for frosted glass effect */
+    -webkit-backdrop-filter: blur(8px) saturate(180%);
+    backdrop-filter: blur(8px) saturate(180%);
+    background-color: rgba(45, 55, 72, 0.7); /* Darker semi-transparent background */
+    border-radius: 10px; /* More rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Soft shadow */
+}
+
+/* Specific colors for toast types, overriding the Tailwind bg- classes for consistency with backdrop */
+#toast-container > div.bg-green-500 { background-color: rgba(16, 185, 129, 0.7); } /* Tailwind green-500 */
+#toast-container > div.bg-red-500 { background-color: rgba(239, 68, 68, 0.7); }    /* Tailwind red-500 */
+#toast-container > div.bg-yellow-500 { background-color: rgba(250, 204, 21, 0.7); } /* Tailwind yellow-500 */
+#toast-container > div.bg-blue-500 { background-color: rgba(59, 130, 246, 0.7); }   /* Tailwind blue-500 */
+
+#toast-container > div span {
+    color: white; /* Ensure text is white */
+}

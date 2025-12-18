@@ -12,5 +12,28 @@
     @yield('content')
 </div>
    
+<div id="toast-container" class="fixed top-4 right-4 z-50 space-y-2"></div>
+
+@vite(['resources/js/app.js'])
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        @if(session('success'))
+            window.showToast('{{ session('success') }}', 'success');
+        @endif
+
+        @if(session('error'))
+            window.showToast('{{ session('error') }}', 'error');
+        @endif
+
+        @if(session('warning'))
+            window.showToast('{{ session('warning') }}', 'warning');
+        @endif
+
+        @if(session('info'))
+            window.showToast('{{ session('info') }}', 'info');
+        @endif
+    });
+</script>
 </body>
 </html>
