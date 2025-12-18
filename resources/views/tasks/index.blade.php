@@ -7,7 +7,7 @@
                 <h2>Task List</h2>
             </div>
             <div class="pull-right mb-2">
-                <a class="btn btn-success" href="{{ route('tasks.create') }}"> Create New Task</a>
+                <a class="btn btn-success" href="{{ route('tasks.create') }}"><i class="fa-solid fa-plus"></i> Create New Task</a>
             </div>
         </div>
     </div>
@@ -33,12 +33,12 @@
             <td>
                 <form action="{{ route('tasks.destroy',$task->id) }}" method="POST">
     
-                    <a class="btn btn-primary" href="{{ route('tasks.edit',$task->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('tasks.edit',$task->id) }}"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
    
                     @csrf
                     @method('DELETE')
       
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Delete</button>
                 </form>
             </td>
         </tr>

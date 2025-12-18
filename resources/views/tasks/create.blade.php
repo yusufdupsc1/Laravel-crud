@@ -7,7 +7,7 @@
             <h2>Add New Task</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('tasks.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('tasks.index') }}"> <i class="fa-solid fa-arrow-left"></i> Back</a>
         </div>
     </div>
 </div>
